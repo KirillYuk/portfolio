@@ -17,10 +17,8 @@
   <body>
     <header>
       <nav>
-        <ul class="nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About me</a></li>
-          <li><a href="#">Skills</a></li>
+        <ul class="navigation">
+          <li><a href="#">About</a></li>
           <li><a href="#">Projects</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
@@ -29,43 +27,16 @@
 
     <main>
       <div class="profile">
-        <div profile-text>
+        <div class="profile-text">
           <h1 class="profile-name">Hi, I'm Kyrylo</h1>
-          <p class="profile-job">Software engineer</p>
-          <div class="skills">
-            <span>Python</span>
-            <div class="line"></div>
-
-            <span>HTML</span>
-            <div class="line"></div>
-
-            <span>CSS</span>
-            <div class="line"></div>
-
-            <span>JS</span>
-            <div class="line"></div>
-
-            <span>GitHub</span>
-            <div class="line"></div>
-
-            <span>Git</span>
-          </div>
-          <p class="description">
-            Hi, I’m Kyrylo, a Computer Science student from Ukraine. I’m
-            currently learning software development and exploring different
-            areas of IT to build strong technical skills and practical
-            experience. I enjoy learning new technologies, solving problems, and
-            working on projects that help me improve step by step. At this
-            stage, I’m focused on studying, gaining experience, and becoming a
-            better developer through continuous learning and practice.
-          </p>
+          <span class="profile-job">Software engineer</span>
 
           <div class="status">
             <div class="place">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
+                width="24"
+                height="24"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -82,8 +53,8 @@
             <div class="work">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
+                width="24"
+                height="24"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -96,7 +67,16 @@
                 <path d="M22 13a18.15 18.15 0 0 1-20 0" />
                 <rect width="20" height="14" x="2" y="6" rx="2" />
               </svg>
-              <span>Available Now</span>
+              <span>Student KPI</span>
+            </div>
+          </div>
+
+          <div class="buttons">
+            <div class="button-hireme">
+              <a href="#">Hire Me</a>
+            </div>
+            <div class="cv-button">
+              <a href="#">Download CV</a>
             </div>
           </div>
         </div>
@@ -111,11 +91,7 @@
       </div>
 
       <div class="about-me-sect">
-        <h2>About me</h2>
-      </div>
-
-      <div class="skills-sect">
-        <h2>Skills</h2>
+        <h2>About</h2>
       </div>
 
       <div class="projects-sect">
@@ -140,7 +116,7 @@
               <h3>Email</h3>
             </div>
 
-            <p>123123123@gmail.com</p>
+            <p>000000000000@gmail.com</p>
           </div>
 
           <div class="card">
@@ -157,7 +133,7 @@
               <h3>GitHub</h3>
             </div>
 
-            <p>https://github.com/KirillYuk</p>
+            <p>github.com/KirillYuk</p>
           </div>
 
           <div class="card">
@@ -174,9 +150,23 @@
               <h3>Telegram</h3>
             </div>
 
-            <p>@123123123</p>
+            <p>@SAAAYQ</p>
           </div>
         </div>
+
+        <form action="" class="hire-me-form">
+          <div class="form-name">
+            <label for="name">Your name: </label>
+            <input type="text" name="name" id="name" required />
+          </div>
+          <div class="form-email">
+            <label for="email">Your email: </label>
+            <input type="email" name="email" id="email" required />
+          </div>
+          <div class="form-button">
+            <input type="button" value="Send">
+          </div>
+        </form>
       </section>
     </main>
 

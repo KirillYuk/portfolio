@@ -1,3 +1,41 @@
+:root {
+  /* Spacing */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 48px;
+  --space-xl: 96px;
+  --space-xxl: 128px;
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* Colors */
+  --color-black: #261e38;
+  --color-white: #f8f8fa;
+  --color-light: #f7e4dd;
+  --color-accent: #eec2c1;
+  --color-accent-dark: #792f3c;
+  --color-dark: #4f1b1f;
+
+  /* Typography */
+
+  --fs-small: 14px;
+  --fs-nav: 16px;
+  --fs-body: 18px;
+
+  --fs-h3: 24px;
+  --fs-h2: 40px;
+  --fs-h1: 64px;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,61 +43,69 @@
 }
 
 body {
-  background: linear-gradient(-45deg, #3c202f, #98495c);
+  background-color: var(--color-dark);
   font-family: "Outfit", sans-serif;
-  color: #f8f8fa;
-  padding-top: 100px;
+  color: var(--color-white);
 }
 
 header {
   position: fixed;
-
-  top: 20px;
+  top: var(--space-md);
   left: 50%;
-
   transform: translateX(-50%);
-
   z-index: 1000;
 }
 
-/* dorobutu */
-.nav {
-  width: fit-content;
-  margin: 20px auto;
-  list-style: none;
+.navigation {
   display: flex;
+  width: fit-content;
+
+  list-style: none;
+  /* gap: var(--space-lg); */
+
   align-items: center;
-  justify-content: center;
-  gap: 50px;
-  padding: 15px;
-  padding-left: 30px;
-  padding-right: 30px;
+
+  /* padding: var(--space-sm) var(--space-md); */
+
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(10px);
-  border-radius: 10px 10px 10px 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+
+  transition: 0.3s;
 }
 
-.nav a {
+.navigation a {
+  font-size: var(--fs-nav);
+  font-weight: var(--fw-medium);
   text-decoration: none;
-  color: #f8f8fa;
-  display: inline-block;
+  color: var(--color-white);
   transition: 0.3s;
   user-select: none;
+
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
 }
 
-.nav a:hover {
-  text-shadow: 0 0 10px #f8f8fa;
+.navigation a:hover {
+  text-shadow: 0 0 10px var(--color-light);
+}
+
+.navigation:hover {
+  box-shadow: 0 0 10px var(--color-light);
+}
+
+main {
+  margin-top: var(--space-xxl);
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .profile {
   display: flex;
-  margin: 50px;
-  margin-left: 15%;
-  margin-right: 15%;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
+  justify-content: space-between;
+  gap: var(--space-lg);
 }
 
 .profile-img {
@@ -67,107 +113,146 @@ header {
   height: 400px;
   object-fit: cover;
   object-position: top;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: var(--radius-lg);
   user-select: none;
+  transition: 0.3s;
+}
+
+.profile-img:hover {
+  box-shadow: 0 0 15px var(--color-light);
 }
 
 .profile-name {
   font-family: "New Rocker", sans-serif;
-  text-align: left;
-  font-size: 70px;
-  font-weight: 700;
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
 }
 
 .profile-job {
-  margin-top: 50px;
-  text-align: left;
-  font-size: 40px;
-  font-weight: 500;
-}
-
-.skills {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.line {
-  flex: 1;
-  height: 1px;
-  background: #ebece4;
-  margin: 0 10px;
-  min-width: 5px;
-  max-width: 50px;
-}
-
-.description {
-  text-align: center;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.5;
+  display: inline-block;
+  margin-top: var(--space-md);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
 }
 
 .status {
-  margin-top: 20px;
+  margin-top: var(--space-sm);
   display: flex;
-  gap: 50px;
+  gap: var(--space-lg);
   align-items: center;
 }
 .place {
+  font-size: var(--fs-h3);
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-xs);
 }
 
 .work {
+  font-size: var(--fs-h3);
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-xs);
 }
 
-.about-me-sect {
-  margin-left: 15%;
-  margin-right: 15%;
+.buttons {
+  justify-content: space-between;
+  display: flex;
+  margin-top: var(--space-lg);
 }
 
-.skills-sect {
-  margin-left: 15%;
-  margin-right: 15%;
+.button-hireme {
+  display: flex;
+  width: fit-content;
+  list-style: none;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+
+  transition: 0.3s;
 }
 
-.projects-sect {
-  margin-left: 15%;
-  margin-right: 15%;
+.button-hireme a {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+  color: var(--color-white);
+  user-select: none;
+  padding: var(--space-xs) var(--space-md);
+  transition: 0.3s;
 }
 
-.contact-sect {
-  margin-left: 15%;
-  margin-right: 15%;
+.button-hireme a:hover {
+  text-shadow: 0 0 10px var(--color-light);
+}
+
+.button-hireme:hover {
+  box-shadow: 0 0 10px var(--color-light);
+}
+
+.cv-button {
+  display: flex;
+  width: fit-content;
+  list-style: none;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+
+  transition: 0.3s;
+}
+
+.cv-button a {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+  color: var(--color-white);
+  user-select: none;
+  padding: var(--space-xs) var(--space-md);
+  transition: 0.3s;
+}
+
+.cv-button a:hover {
+  text-shadow: 0 0 10px var(--color-light);
+}
+
+.cv-button:hover {
+  box-shadow: 0 0 10px var(--color-light);
 }
 
 .contact-cards {
+  margin-top: var(--space-sm);
   display: flex;
+  justify-content: space-between;
+  gap: var(--space-lg);
 }
 
 .card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(10px);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px;
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
   width: 100%;
 }
 
 .card-name {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: var(--space-sm);
 }
 
 .card p {
-  text-align: right;}
+  text-align: right;
+  margin-top: var(--space-md);
+}
 
 .contact-cards svg {
   width: 50px;
@@ -190,11 +275,9 @@ header {
 }
 
 .footer {
-  padding: 10px;
+  padding: var(--space-md);
   text-align: center;
-  font-size: 14px;
-  color: #ebece4;
-  background-color: black;
-  cursor: not-allowed;
+  font-size: var(--fs-small);
+  color: var(--color-white);
   user-select: none;
 }
