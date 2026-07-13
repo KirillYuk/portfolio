@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(-45deg, #3c202f, #98495c);
+  font-family: "Outfit", sans-serif;
+  color: #f8f8fa;
+  padding-top: 100px;
+}
+
+header {
+  position: fixed;
+
+  top: 20px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 1000;
+}
+
+/* dorobutu */
+.nav {
+  width: fit-content;
+  margin: 20px auto;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 10px 10px 10px 10px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #f8f8fa;
+  display: inline-block;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.nav a:hover {
+  text-shadow: 0 0 10px #f8f8fa;
+}
+
+.profile {
+  display: flex;
+  margin: 50px;
+  margin-left: 15%;
+  margin-right: 15%;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.profile-img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 20px 20px 20px 20px;
+  user-select: none;
+}
+
+.profile-name {
+  font-family: "New Rocker", sans-serif;
+  text-align: left;
+  font-size: 70px;
+  font-weight: 700;
+}
+
+.profile-job {
+  margin-top: 50px;
+  text-align: left;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.skills {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: #ebece4;
+  margin: 0 10px;
+  min-width: 5px;
+  max-width: 50px;
+}
+
+.description {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.status {
+  margin-top: 20px;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+.place {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.work {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.about-me-sect {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.skills-sect {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.projects-sect {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.contact-sect {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.contact-cards {
+  display: flex;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  width: 100%;
+}
+
+.card-name {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.card p {
+  text-align: right;}
+
+.contact-cards svg {
+  width: 50px;
+  height: 50px;
+}
+
+.mail {
+  fill: #ea4335;
+  filter: drop-shadow(0 0 5px #ea4335);
+}
+
+.github {
+  fill: #181717;
+  filter: drop-shadow(0 0 5px #181717);
+}
+
+.telegram {
+  fill: #26a5e4;
+  filter: drop-shadow(0 0 5px #26a5e4);
+}
+
+.footer {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #ebece4;
+  background-color: black;
+  cursor: not-allowed;
+  user-select: none;
+}
