@@ -170,7 +170,6 @@ main {
 .button-hireme {
   display: flex;
   width: fit-content;
-  list-style: none;
   align-items: center;
 
   background: rgba(255, 255, 255, 0.05);
@@ -203,7 +202,6 @@ main {
 .cv-button {
   display: flex;
   width: fit-content;
-  list-style: none;
   align-items: center;
 
   background: rgba(255, 255, 255, 0.05);
@@ -291,6 +289,23 @@ main {
   justify-content: space-between;
   gap: var(--space-lg);
 }
+
+
+
+.contact-cards a {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+  color: var(--color-white);
+  user-select: none;
+  transition: 0.3s;
+}
+
+.contact-cards a:hover {
+  text-shadow: 0 0 10px var(--color-light);
+}
+
+
 
 .card {
   background: rgba(255, 255, 255, 0.05);
@@ -384,7 +399,7 @@ form textarea {
   font-size: var(--fs-body);
   color: var(--color-white);
   text-align: left;
-  height: 40px;
+  min-height: 100px;
   width: 300px;
 }
 
