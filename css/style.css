@@ -214,7 +214,8 @@ main {
 }
 
 .button-secondary {
-  background: var(--color-surface);
+  backdrop-filter: blur(3px);
+    background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--color-border);
   color: var(--color-text);
 }
@@ -266,8 +267,8 @@ main {
 
 .project-card {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(3px);
   border-radius: var(--radius-md);
   padding: var(--space-sm);
   width: 100%;
@@ -275,7 +276,7 @@ main {
 }
 
 .project-card:hover,
-.card:hover {
+.contact-card:hover {
   border-color: var(--color-accent-dim);
 }
 
@@ -302,23 +303,31 @@ main {
 
 #contact {
   margin-top: var(--space-md);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
 }
 
 .contact-cards {
   margin-left: var(--space-sm);
-  margin-top: var(--space-sm);
   display: flex;
   justify-content: space-between;
   gap: var(--space-lg);
+  grid-column: 1;
+  flex-direction: column;
 }
 
 .contact-cards a {
   font-size: var(--fs-body);
   font-weight: var(--fw-medium);
   text-decoration: none;
-  color: var(--color-white);
+  color: var(--color-text);
   user-select: none;
   transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
 }
 
 .contact-card a:hover {
@@ -327,11 +336,12 @@ main {
 
 .contact-card {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--space-sm) var(--space-md);
   width: 100%;
   transition: 0.3s;
+  backdrop-filter: blur(3px);
 }
 
 .contact-card-name {
@@ -366,15 +376,14 @@ main {
 }
 
 .form {
+  gap: var(--space-md);
+  grid-column: 2;
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
-  margin-top: var(--space-md);
 }
 
 .hire-me-form {
-  margin-top: var(--space-md);
-  margin-left: var(--space-sm);
-  margin-bottom: var(--space-md);
   display: flex;
 
   flex-direction: column;
@@ -397,12 +406,12 @@ main {
 .hire-me-form input,
 .hire-me-form textarea {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(3px);
   border-radius: var(--radius-sm);
   padding: var(--space-xs) var(--space-xs);
   font-size: var(--fs-body);
-  color: var(--color-white);
+  color: var(--color-text);
   width: 100%;
   max-width: 300px;
 }
@@ -419,7 +428,7 @@ main {
 .hire-me-form input:focus,
 .hire-me-form textarea:focus {
   outline: none;
-  border-color: var(--color-accent);
+  border-color: var(--color-accent-dim);
 }
 
 #button-submit {
@@ -431,6 +440,6 @@ footer {
   padding: var(--space-md);
   text-align: center;
   font-size: var(--fs-small);
-  color: var(--color-white);
+  color: var(--color-text-dim);
   user-select: none;
 }
