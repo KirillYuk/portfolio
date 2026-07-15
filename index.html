@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,33 +12,33 @@
       rel="stylesheet" />
 
     <title>Kyrylo</title>
-    <link rel="icon" type="image/png" href="icon.png" />
+    <link rel="icon" type="image/png" href="assets/ico/icon.png" />
   </head>
 
   <body>
     <header>
       <nav>
         <ul class="navigation">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <div class="profile">
-        <div class="profile-text">
-          <h1 class="profile-name">Hi, I'm Kyrylo</h1>
-          <span class="profile-job">Software engineer</span>
-          <div class="profile-description">
+      <section id="hero" class="hero">
+        <div class="hero-text">
+          <h1 class="hero-name">Hi, I'm Kyrylo</h1>
+          <span class="hero-job">Software engineer</span>
+          <div class="hero-description">
             <p>
               Beginner developer focused on learning modern technologies and
               creating clean, user-friendly projects
             </p>
           </div>
-          <div class="status">
-            <div class="place">
+          <div class="hero-status">
+            <div class="hero-place">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -56,7 +56,7 @@
               </svg>
               <span>Ukraine</span>
             </div>
-            <div class="work">
+            <div class="hero-work">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -77,26 +77,22 @@
             </div>
           </div>
 
-          <div class="buttons">
-            <div class="button-hireme">
-              <a href="#">Hire Me</a>
-            </div>
-            <div class="cv-button">
-              <a href="#">Download CV</a>
-            </div>
+          <div class="hero-buttons">
+            <a href="#contact" class="button button-primary">Hire Me</a>
+            <a href="#" class="button button-secondary">Download CV</a>
           </div>
         </div>
 
         <div class="avatar">
           <img
             class="profile-img"
-            src="meliodas.jpg"
+            src="assets/img/meliodas.jpg"
             alt="Profile image"
             draggable="false" />
         </div>
-      </div>
+      </section>
 
-      <div class="about-me-sect">
+      <section id="about" class="about">
         <h2>About</h2>
         <p>
           I'm an aspiring developer with a passion for programming and
@@ -115,34 +111,34 @@
           I strive to write cleaner code, strengthen my problem-solving skills,
           and continue growing as a developer.
         </p>
-      </div>
+      </section>
 
-      <div class="projects-sect">
+      <section id="projects" class="projects">
         <h2>Projects</h2>
         <div class="project-cards">
           <div class="project-card">
-            <img src="zstream.gif" alt="FinMonitor" />
+            <img src="assets/img/zstream.gif" alt="FinMonitor" />
             <div class="project-card-name">
               Financial Data Monitoring System
             </div>
           </div>
           <div class="project-card">
-            <img src="p1.png" alt="P2" />
+            <img src="assets/img/p1.png" alt="P2" />
             <div class="project-card-name">Project 2</div>
           </div>
           <div class="project-card">
-            <img src="p2.png" alt="P3" />
+            <img src="assets/img/p2.png" alt="P3" />
             <div class="project-card-name">Project 3</div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <section id="contact" class="contact-sect">
+      <section id="contact" class="contact">
         <h2>Contact</h2>
 
         <div class="contact-cards">
-          <div class="card">
-            <div class="card-name">
+          <div class="contact-card">
+            <div class="contact-card-name">
               <svg
                 class="mail"
                 role="img"
@@ -155,11 +151,13 @@
               <h3>Email</h3>
             </div>
 
-            <p><a href="mailto:qwertyunisky@gmail.com">qwertyunisky@gmail.com</a></p>
+            <p>
+              <a href="mailto:qwertyunisky@gmail.com">qwertyunisky@gmail.com</a>
+            </p>
           </div>
 
-          <div class="card">
-            <div class="card-name">
+          <div class="contact-card">
+            <div class="contact-card-name">
               <svg
                 class="github"
                 role="img"
@@ -172,11 +170,18 @@
               <h3>GitHub</h3>
             </div>
 
-            <p><a href="https://github.com/KirillYuk" target="_blank">github.com/KirillYuk</a></p>
+            <p>
+              <a
+                href="https://github.com/KirillYuk"
+                rel="noopener noreferrer"
+                target="_blank"
+                >github.com/KirillYuk</a
+              >
+            </p>
           </div>
 
-          <div class="card">
-            <div class="card-name">
+          <div class="contact-card">
+            <div class="contact-card-name">
               <svg
                 class="telegram"
                 role="img"
@@ -189,30 +194,38 @@
               <h3>Telegram</h3>
             </div>
 
-            <p><a href="https://t.me/SAAAYQ" target="_blank">@SAAAYQ</a></p>
+            <p>
+              <a
+                href="https://t.me/SAAAYQ"
+                rel="noopener noreferrer"
+                target="_blank"
+                >@SAAAYQ</a
+              >
+            </p>
           </div>
         </div>
-
-        <form action="" class="hire-me-form">
-          <div class="form-name">
-            <label for="name">Your name: </label>
-            <input type="text" name="name" id="name" required />
-          </div>
-          <div class="form-email">
-            <label for="email">Your email: </label>
-            <input type="email" name="email" id="email" required />
-          </div>
-          <div class="form-message">
-            <label for="message">Your message:</label>
-            <textarea name="message" id="message"></textarea>
-          </div>
-          <div class="form-button">
-            <input type="submit" value="Send" />
-          </div>
-        </form>
+        <div class="form">
+          <form action="" class="hire-me-form">
+            <div class="form-group">
+              <label for="name">Your name</label>
+              <input type="text" name="name" id="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Your email</label>
+              <input type="email" name="email" id="email" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Your message</label>
+              <textarea name="message" id="message" rows="5"></textarea>
+            </div>
+            <button class="button button-primary" id="button-submit" type="submit">
+              Send
+            </button>
+          </form>
+        </div>
       </section>
     </main>
 
-    <footer class="footer">© 2026 Kyrylo. Made with ❤️</footer>
+    <footer>© 2026 Kyrylo. Made with ❤️</footer>
   </body>
 </html>
