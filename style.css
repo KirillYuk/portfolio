@@ -13,12 +13,14 @@
   --radius-lg: 20px;
 
   /* Colors */
-  --color-black: #261e38;
-  --color-white: #f8f8fa;
-  --color-light: #f7e4dd;
-  --color-accent: #eec2c1;
-  --color-accent-dark: #792f3c;
-  --color-dark: #4f1b1f;
+  --color-bg: #0c0a09;
+  --color-surface: #14110f;
+  --color-navbg: rgba(50, 50, 50, .5);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-text: #f5f0eb;
+  --color-text-dim: #8a8078;
+  --color-accent: #f59e0b;
+  --color-accent-dim: #b45309;
 
   /* Typography */
 
@@ -43,9 +45,20 @@
 }
 
 body {
-  background-color: var(--color-dark);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size:
+    80px 80px,
+    80px 80px,
+    16px 16px,
+    16px 16px;
+
+  background-color: var(--color-bg);
   font-family: "Outfit", sans-serif;
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 header {
@@ -61,26 +74,24 @@ header {
   width: fit-content;
 
   list-style: none;
-  /* gap: var(--space-lg); */
 
   align-items: center;
 
-  /* padding: var(--space-sm) var(--space-md); */
+  background: var(--color-navbg);
+  backdrop-filter: blur(5px);
 
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
 
   transition: 0.3s;
+  
 }
 
 .navigation a {
   font-size: var(--fs-nav);
   font-weight: var(--fw-medium);
   text-decoration: none;
-  color: var(--color-white);
+  color: var(--color-text);
   transition: 0.3s;
   user-select: none;
 
@@ -89,11 +100,11 @@ header {
 }
 
 .navigation a:hover {
-  text-shadow: 0 0 10px var(--color-light);
+  text-shadow: 0 0 10px var(--color-accent);
 }
 
 .navigation:hover {
-  box-shadow: 0 0 10px var(--color-light);
+  box-shadow: 0 0 10px var(--color-accent);
 }
 
 main {
@@ -119,13 +130,14 @@ main {
 }
 
 .profile-img:hover {
-  box-shadow: 0 0 15px var(--color-light);
+  box-shadow: 0 0 15px var(--color-accent);
 }
 
 .profile-name {
   font-family: "New Rocker", sans-serif;
   font-size: var(--fs-h1);
   font-weight: var(--fw-bold);
+  color: var(--color-text);
 }
 
 .profile-job {
@@ -133,12 +145,14 @@ main {
   margin-top: var(--space-md);
   font-size: var(--fs-h2);
   font-weight: var(--fw-semibold);
+  color: var(--color-accent);
+  text-shadow: 0 0 20px var(--color-accent);
 }
 
 .profile-description {
   margin-top: var(--space-xs);
   font-size: var(--fs-body);
-  color: var(--color-accent);
+  color: var(--color-text-dim);
 }
 
 .status {
@@ -161,6 +175,11 @@ main {
   gap: var(--space-xs);
 }
 
+.place svg,
+.work svg {
+  stroke: var(--color-accent);
+}
+
 .buttons {
   gap: var(--space-lg);
   display: flex;
@@ -172,10 +191,10 @@ main {
   width: fit-content;
   align-items: center;
 
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-accent);
   backdrop-filter: blur(10px);
 
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--color-accent);
   border-radius: var(--radius-md);
 
   transition: 0.3s;
@@ -185,7 +204,7 @@ main {
   font-size: var(--fs-body);
   font-weight: var(--fw-medium);
   text-decoration: none;
-  color: var(--color-white);
+  color: var(--color-bg);
   user-select: none;
   padding: var(--space-xs) var(--space-md);
   transition: 0.3s;
@@ -204,10 +223,10 @@ main {
   width: fit-content;
   align-items: center;
 
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-surface);
   backdrop-filter: blur(10px);
 
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
 
   transition: 0.3s;
@@ -217,7 +236,7 @@ main {
   font-size: var(--fs-body);
   font-weight: var(--fw-medium);
   text-decoration: none;
-  color: var(--color-white);
+  color: var(--color-text);
   user-select: none;
   padding: var(--space-xs) var(--space-md);
   transition: 0.3s;
@@ -237,7 +256,7 @@ main {
 
 .about-me-sect p {
   font-size: var(--fs-body);
-  color: var(--color-accent);
+  color: var(--color-text-dim);
   margin-left: var(--space-sm);
   margin-top: var(--space-sm);
 }
@@ -261,6 +280,12 @@ main {
   border-radius: var(--radius-md);
   padding: var(--space-sm);
   width: 100%;
+  transition: 0.3s;
+}
+
+.project-card:hover,
+.card:hover {
+  border-color: var(--color-accent-dim);
 }
 
 .project-card-name {
@@ -269,6 +294,8 @@ main {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+  margin-top: var(--space-xs);
+  margin-left: var(--space-xs);
 }
 
 .project-cards img {
@@ -290,8 +317,6 @@ main {
   gap: var(--space-lg);
 }
 
-
-
 .contact-cards a {
   font-size: var(--fs-body);
   font-weight: var(--fw-medium);
@@ -301,19 +326,17 @@ main {
   transition: 0.3s;
 }
 
-.contact-cards a:hover {
-  text-shadow: 0 0 10px var(--color-light);
+.card a:hover {
+  text-shadow: 0 0 10px var(--color-accent);
 }
-
-
 
 .card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
   border-radius: var(--radius-md);
   padding: var(--space-sm) var(--space-md);
   width: 100%;
+  transition: 0.3s;
 }
 
 .card-name {
@@ -338,8 +361,8 @@ main {
 }
 
 .github {
-  fill: #181717;
-  filter: drop-shadow(0 0 5px #181717);
+  fill: white;
+  filter: drop-shadow(0 0 5px white);
 }
 
 .telegram {
@@ -403,8 +426,13 @@ form textarea {
   width: 300px;
 }
 
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
 .footer {
-  background: rgba(0, 0, 0, 0.3);
   padding: var(--space-md);
   text-align: center;
   font-size: var(--fs-small);
