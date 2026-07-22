@@ -12,7 +12,7 @@ links.forEach((link) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
 
-          const title = entry.target.querySelector("h2");
+          const title = entry.target.querySelector(".section-title");
 
           title.classList.add("highlight-title");
 

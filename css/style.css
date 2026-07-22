@@ -97,10 +97,6 @@ header {
   transition: 0.3s;
 }
 
-.navigation:hover {
-  box-shadow: 0 0 10px var(--color-accent);
-}
-
 .navigation a {
   font-size: var(--fs-nav);
   font-weight: var(--fw-medium);
@@ -114,6 +110,7 @@ header {
 
 .navigation a:hover {
   text-shadow: 0 0 10px var(--color-accent);
+  color: var(--color-accent);
 }
 
 /*
@@ -141,8 +138,8 @@ section {
     color: var(--color-text);
   }
 
-  40%,
-  60% {
+  20%,
+  50% {
     color: var(--color-accent);
   }
 }
@@ -332,10 +329,14 @@ section {
 
 #contact {
   margin-top: var(--space-md);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
-  align-items: start;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    margin-top: var(--space-sm);
+    align-items: start;
 }
 
 .contact-cards {
@@ -343,7 +344,6 @@ section {
   display: flex;
   justify-content: space-between;
   gap: var(--space-lg);
-  grid-column: 1;
   flex-direction: column;
 }
 
@@ -406,7 +406,6 @@ section {
 
 .form {
   gap: var(--space-md);
-  grid-column: 2;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
