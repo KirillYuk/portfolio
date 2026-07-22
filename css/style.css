@@ -1,5 +1,5 @@
 /*
----------- SYSTEM
+*---------- SYSTEM
 */
 
 :root {
@@ -43,13 +43,17 @@
 }
 
 /*
----------- BASE
+*---------- BASE
 */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -78,7 +82,7 @@ header {
 }
 
 /*
----------- NAVIGATION
+*---------- NAVIGATION
 */
 
 .navigation {
@@ -87,7 +91,7 @@ header {
   list-style: none;
   align-items: center;
   background: var(--color-navbg);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(3px);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   transition: 0.3s;
@@ -113,17 +117,38 @@ header {
 }
 
 /*
----------- MAIN
+*---------- MAIN
 */
 
 main {
-  margin-top: var(--space-xxl);
-  margin-left: 20%;
-  margin-right: 20%;
+  width: 100%;
+  max-width: 1200px;
+  margin: var(--space-xxl) auto 0;
+  padding: 0 16px;
+}
+
+section {
+  scroll-margin-top: var(--space-xxl);
+}
+
+.highlight-title {
+  animation: highlightTitle 1s;
+}
+
+@keyframes highlightTitle {
+  0%,
+  100% {
+    color: var(--color-text);
+  }
+
+  40%,
+  60% {
+    color: var(--color-accent);
+  }
 }
 
 /*
----------- HERO
+*---------- HERO
 */
 
 #hero {
@@ -208,14 +233,15 @@ main {
 }
 
 .button-primary {
-  background: var(--color-accent);
-  border: 1px solid var(--color-accent);
-  color: var(--color-bg);
+  backdrop-filter: blur(3px);
+  background: var(--color-navbg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
 }
 
 .button-secondary {
   backdrop-filter: blur(3px);
-    background: rgba(255, 255, 255, 0.05);
+  background: var(--color-navbg);
   border: 1px solid var(--color-border);
   color: var(--color-text);
 }
@@ -230,12 +256,8 @@ main {
   transition: 0.3s;
 }
 
-.profile-img:hover {
-  box-shadow: 0 0 15px var(--color-accent);
-}
-
 /*
----------- ABOUT
+*---------- ABOUT
 */
 
 #about {
@@ -246,11 +268,12 @@ main {
   font-size: var(--fs-body);
   color: var(--color-text-dim);
   margin-left: var(--space-sm);
+  margin-right: var(--space-sm);
   margin-top: var(--space-sm);
 }
 
 /*
----------- PROJECTS
+*---------- PROJECTS
 */
 
 #projects {
@@ -259,6 +282,7 @@ main {
 
 .project-cards {
   margin-left: var(--space-sm);
+  margin-right: var(--space-sm);
   margin-top: var(--space-sm);
   display: flex;
   justify-content: space-between;
@@ -283,9 +307,14 @@ main {
 .project-card-name {
   font-size: var(--fs-body);
   font-weight: var(--fw-medium);
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+  margin-left: var(--space-xs);
+}
+
+.project-card-description {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-dim);
   margin-top: var(--space-xs);
   margin-left: var(--space-xs);
 }
@@ -294,11 +323,11 @@ main {
   border-radius: var(--radius-sm);
   object-fit: cover;
   width: 100%;
-  height: 200px;
+  aspect-ratio: 16/9;
 }
 
 /*
----------- CONTACT
+*---------- CONTACT
 */
 
 #contact {
@@ -381,11 +410,13 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  justify-self: flex-end;
+  height: 100%;
+  margin-right: var(--space-sm);
 }
 
 .hire-me-form {
   display: flex;
-
   flex-direction: column;
   gap: var(--space-sm);
 }
@@ -418,22 +449,62 @@ main {
 
 .hire-me-form input {
   height: 40px;
+  transition: 0.3s;
 }
 
 .hire-me-form textarea {
   min-height: 100px;
   min-width: 300px;
+  transition: 0.3s;
 }
 
 .hire-me-form input:focus,
 .hire-me-form textarea:focus {
   outline: none;
+  box-shadow: 0 0 10px var(--color-accent);
+}
+
+.hire-me-form input:hover,
+.hire-me-form textarea:hover {
   border-color: var(--color-accent-dim);
 }
 
 #button-submit {
   width: 100px;
   align-self: flex-end;
+}
+
+.under-form-text {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h2);
+  margin-top: var(--space-md);
+  text-align: right;
+}
+
+.under-form-text p {
+  color: var(--color-text-dim);
+  animation: highlight 3s infinite;
+}
+
+.under-form-text p:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.under-form-text p:nth-child(3) {
+  animation-delay: 2s;
+}
+
+@keyframes highlight {
+  0%,
+  25%,
+  100% {
+    color: var(--color-text-dim);
+  }
+
+  40%,
+  60% {
+    color: var(--color-accent);
+  }
 }
 
 footer {
