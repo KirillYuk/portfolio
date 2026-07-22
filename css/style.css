@@ -113,6 +113,10 @@ header {
   color: var(--color-accent);
 }
 
+.hero-nav-name {
+  font-family: "New Rocker", sans-serif;
+  transform: translateY(1px);
+}
 /*
 *---------- MAIN
 */
@@ -227,6 +231,8 @@ section {
 .button:hover {
   box-shadow: 0 0 10px var(--color-accent);
   text-shadow: 0 0 10px var(--color-accent);
+  color: var(--color-accent);
+  cursor: pointer;
 }
 
 .button-primary {
@@ -332,11 +338,11 @@ section {
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-lg);
-    margin-top: var(--space-sm);
-    align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-sm);
+  align-items: start;
 }
 
 .contact-cards {
